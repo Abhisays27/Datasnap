@@ -2,15 +2,22 @@ html{
   
     background-color: #f5f5f5;
     font-family: "Inter", sans-serif;
+    justify-content: center;
+    
+  
 }
 *{
     margin: 0;
     padding: 0;
 }
 .inside-banner{
-    max-width: 1400px;
+ 
     display: flex;
     justify-content: space-between;
+    max-width: 1400px;
+  margin: 0 auto;
+  
+  
 }
 .banner{
    
@@ -19,6 +26,7 @@ html{
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
     padding: 10px 20px;
     margin-bottom: 5%;
+   
 }
 
 .banner a {
@@ -64,6 +72,8 @@ html{
 .hero{
     display: flex;
     max-width: 1400px;
+    margin: 0 auto;
+  
    
 }
 .editor{
