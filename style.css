@@ -19,7 +19,7 @@ html{
   
   
 }
-.banner{
+.banner,.mob-banner{
    
     
     background-color: #fff; 
@@ -29,14 +29,14 @@ html{
    
 }
 
-.banner a {
+.banner a,.mob-banner a {
     text-decoration: none;
     color: #000;
     font-weight: 500;
     transition: color 0.3s ease; 
   }
   
-  .banner a:hover {
+  .banner a:hover ,.mob-banner a:hover {
     color: #00f; 
   }
   
@@ -54,7 +54,7 @@ html{
     margin-right: 1%;
 }
 
-.banner .right-side button {
+.banner .right-side button, .mobile-buttons button {
     background: linear-gradient(to bottom, #333, #222); /* Gradient background in blackish tones */
     border: none;
     color: white;
@@ -103,6 +103,9 @@ html{
   }
   #bannerImage{
     width: 300px;
+    border: 1px solid rgb(193, 187, 187);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
   }
   .btn-group {
     display: inline-block;
@@ -179,12 +182,13 @@ html{
     width: 100%;
     overflow: hidden;
     font-size: 50px;
+  outline: none;
     font-weight:bolder; /* Set default font size */
     color: #000; /* Set default text color */
     resize: vertical; /* Allow vertical resizing */
     border: none; /* Remove border */
     resize: none;
-    outline: none;
+   
     font-family: "Inter", sans-serif !important;
   }
   
@@ -206,6 +210,8 @@ html{
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+   
+    margin-top: -2%;
     outline-color: rgb(7, 220, 213);
   }
   
@@ -378,20 +384,222 @@ html{
     color: red;
 }
 
-.publishing-tips{
+.publishing-tips, .title-tips, .Tags-tips{
     margin-top: 10%;
    
 }
-.publishing-tips h1{
+.publishing-tips h1, .title-tips h1,.Tags-tips h1{
     font-size: 25px;
 }
-.publishing-tips ul{
+.publishing-tips ul, .title-tips ul,.Tags-tips ul{
     margin-left: 4%;
     margin-top: 2%;
 }
-.publishing-tips li{
+.publishing-tips li, .title-tips li,.Tags-tips li{
     margin-top: 2%;
     color: #696568;
     font-size: 16px;
 
+}
+.title-tips,
+.Tags-tips {
+  display: none;
+
+ 
+  
+}
+.input-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.popup {
+  display: none;
+    position: absolute;
+    color: white;
+   margin-top: 3px;
+    left: 75%;
+    background: linear-gradient(to bottom, #333, #222); /* Gradient background in blackish tones */
+   width: 135px;
+   font-size: 14px;
+    z-index: 2;
+   
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+
+
+.popup p {
+  margin-bottom: 10px;
+}
+
+.popup button {
+  background-color: #13da69; /* Green background color */
+  color: #ffffff; /* White text color */
+  border: none;
+  font-size: 11px;
+  padding: 8px 16px; /* Larger padding for better clickability */
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.popup button:hover {
+  background-color: #0a0a0a;
+}
+
+
+.question-mark {
+  position: absolute;
+  top: 0;
+  right: -9px;
+  width: 22px;
+  height: 22px;
+  line-height: 20px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+}
+.mobile-buttons,.mob-banner{
+  display: none;
+}
+
+
+@media screen and (min-width: 764px) and (max-width: 1124px) {
+  .editor {
+   
+   
+ 
+    margin-left: 5%;
+    width: 147vh;
+   
+}
+.post-content-input::placeholder {
+  font-size: 34px; /* Adjust placeholder font size */
+  
+}
+.post-content-input {
+
+  font-size: 34px;
+ 
+ 
+}
+.search-input {
+  width: 98%;
+ 
+}
+.popup {
+  
+  left: 65%;
+  
+}
+}
+
+@media screen and (max-width: 763px) {
+  .tips{
+    display: none ;
+  }
+  .hero{
+    display: flex;
+    flex-direction: column;
+    
+  
+   
+}
+.editor {
+
+
+  margin-left: 1%;
+  margin-right: 1%;
+  width: auto;
+  height: 80vh;
+}
+.post-content-input::placeholder {
+  font-size: 30px; /* Adjust placeholder font size */
+  
+}
+.post-content-input {
+
+  font-size: 30px;
+ 
+ 
+}
+.search-input{
+  width: 95%;
+}
+.question-mark {
+  
+  right: 9px;
+  
+}
+.popup {
+  
+  left: 53%;
+}
+.message{
+  display: none;
+}
+.mobile-buttons{
+  display: flex;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 4%;
+  gap: 20px;
+
+}
+.categories-section{
+  margin-top: 7%;
+}
+.review-button{
+  margin-bottom: 4%;
+}
+.banner{
+  display: none;
+}
+.mob-banner{
+  display: block;
+}
+.mob-banner a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 12px;
+  transition: color 0.3s ease; 
+}
+.left-side{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-left: 50px;
+}
+.categories-section p {
+  font-size: 14px;
+
+}
+
+}
+@media screen and (max-width: 373px){
+  .left-side{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2px;
+    margin-left: 50px;
+  }
+  .post-content-input::placeholder {
+    font-size: 28px; /* Adjust placeholder font size */
+    
+  }
+  .post-content-input {
+  
+    font-size: 28px;
+   
+   
+  }
 }

@@ -82,8 +82,11 @@ document.addEventListener("DOMContentLoaded", function() {
   function updatePlaceholder() {
   if (selectedTags.length === 4) {
     searchInput.placeholder = "Max selections reached...";
-  } else {
-    searchInput.placeholder = "Add up to 4 tags...";
+  } else if(selectedTags.length > 0) {
+    searchInput.placeholder = "Add another...";
+  }
+  else{
+    searchInput.placeholder = "Add upto 4 tags...";
   }
 }
   // Function to display dropdown with filtered tags
@@ -260,7 +263,67 @@ function removeCategory(category) {
   });
 });
 
+//tips
+document.addEventListener("DOMContentLoaded", function() {
+  const postContentInput = document.getElementById("postContentInput");
+  const searchInput = document.getElementById("searchInput");
+  const titleTips = document.getElementById("titleTips");
+  const tagsTips = document.getElementById("tagsTips");
+  const publishingTips = document.getElementById("publishingTips");
 
+
+
+  // Function to show title tips and hide publishing tips
+  function showTitleTips() {
+    titleTips.style.display = "block";
+    publishingTips.style.display = "none";
+    tagsTips.style.display = "none";
+  }
+
+  // Function to show tags tips and hide publishing tips
+  function showTagsTips() {
+    tagsTips.style.display = "block";
+    publishingTips.style.display = "none";
+    titleTips.style.display = "none";
+  }
+ 
+
+  // Function to reset to publishing tips
+  function resetToPublishingTips() {
+    publishingTips.style.display = "block";
+    titleTips.style.display = "none";
+    tagsTips.style.display = "none";
+  }
+
+  // Event listener for clicking on post content input
+  postContentInput.addEventListener("click", showTitleTips);
+
+  // Event listener for clicking on search input
+  searchInput.addEventListener("click", showTagsTips);
+
+  // Event listener for clicking elsewhere to reset
+  document.addEventListener("click", function(event) {
+    if (event.target !== postContentInput && event.target !== searchInput) {
+      resetToPublishingTips();
+    }
+  });
+});
+
+//popu-up q mark
+function showPopup() {
+    var popup = document.getElementById("popup");
+    popup.style.display = "block";
+}
+document.addEventListener("click", function(event) {
+    var popup = document.getElementById("popup");
+    var questionMark = document.querySelector(".question-mark");
+    
+    // Close popup if clicked outside
+    if (!popup.contains(event.target) && event.target !== questionMark) {
+        popup.style.display = "none";
+    }
+    
+});
 
 
     </script>
@@ -279,6 +342,19 @@ function removeCategory(category) {
         </div>
     </div>
     </div>
+    <div class="mob-banner">
+      <div class="inside-banner">
+        <div class="middle">
+          <img src="./Assests/gfg-gg-logo.svg" alt="">
+      </div>
+      <div class="left-side">
+          <a href="">Guidlines to improve</a>
+          <a href="">Guidlines to write</a>
+      </div>
+
+     
+  </div>
+  </div>
     <div class="hero">
     <div class="editor">
         <div class="main-editor">
@@ -297,14 +373,25 @@ function removeCategory(category) {
               
           </div>
 
-          <!-- text area to fill form -->
+          <!-- text area to fill title -->
 
           <textarea id="postContentInput" class="post-content-input" placeholder="New post title here..."></textarea>
 
           <!-- hastag search bar -->
 
           <div class="search-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Add up to 4 tags...">
+            <div class="input-container">
+              <input type="text" id="searchInput" class="search-input" placeholder="Add up to 4 tags...">
+              <div class="question-mark" onclick="showPopup()">?</div>
+          </div>
+          
+          <div class="popup" id="popup">
+              <div class="popup-content">
+                  <p>Hastag Not there?</p>
+                  <button onclick="addNewTag()">Request tag</button>
+              </div>
+          </div>
+          
             <div class="tag-list" id="tagList"></div>
             <div class="dropdown" id="dropdown">
            
@@ -322,6 +409,10 @@ function removeCategory(category) {
             Editor
         </div>
         </div>
+        <div class="mobile-buttons">
+          <button>Preview</button>
+          <button>Save as Draft</button>
+      </div>
         <div class="hero-right">
             <div class="categories-section">
                 <h2>Categories</h2>
@@ -342,16 +433,35 @@ function removeCategory(category) {
          <div class="review-button">
             <button>Submit for review</button>
          </div>
-         <div class="publishing-tips">
+         <div class="tips">
+         <div class="publishing-tips" id="publishingTips">
             <h1>Publishing Tips</h1>
             <ul>
-                <li>Ensure your post has a cover image set to make the most of the home field and social media platform.</li>
+                <li>Ensure your post has a cover image set to make the most of the home feed and social media platforms</li>
                 <li>Share your post on social media platform or with your cow workers or local community.</li>
                 <li>Promote your content through various channels such as social media, newsletters, and collaborations.</li>
             </ul>
          </div>
-          </div>
-          
+         <div class="title-tips" id="titleTips">
+
+          <h1>Writing a Great Post Title</h1>
+          <ul>
+              <li>Ensure your post has a cover image set to make the most of the home field and social media platform.</li>
+              <li>Use keywords where appropriate to help ensure people can find your post by search.</li>
+              
+          </ul>
+       </div>
+       <div class="Tags-tips" id="tagsTips">
+        <h1>Tagging Guidelines</h1>
+        <ul>
+          <li>Tags help people find your post - think of them as the topics or categories that best describe your post.</li>
+          <li>Add up to four comma-separated tags per post. Use existing tags whenever possible.</li>
+          <li>Some tags have special posting guidelines - double check to make sure your post complies with them.</li>
+        </ul>
+    </div>
+  </div>
+        </div>
+                
         
         
     </div>
