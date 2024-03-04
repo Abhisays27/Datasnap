@@ -536,6 +536,7 @@ html{
 .question-mark {
   
   right: 9px;
+  top: 3px;
   
 }
 .popup {
@@ -606,7 +607,7 @@ html{
 }
 
 }
-@media screen and (max-width: 373px){
+@media screen and (max-width: 376px){
   .left-side{
     display: flex;
     justify-content: space-between;
