@@ -540,7 +540,7 @@ html{
 }
 .popup {
   
-  left: 53%;
+  left: 60%;
 }
 .message{
   display: none;
@@ -581,6 +581,27 @@ html{
 }
 .categories-section p {
   font-size: 14px;
+
+}
+.editor{
+  margin-top: 5%;
+}
+.popup {
+  width: 111px;
+    
+   font-size: 12px;
+    
+
+}
+
+
+
+
+
+.popup button {
+  
+  font-size: 10px;
+  padding: 5px 10px; /* Larger padding for better clickability */
 
 }
 
