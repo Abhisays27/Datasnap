@@ -577,7 +577,7 @@ html{
   justify-content: space-between;
   align-items: center;
   gap: 15px;
-  margin-left: 50px;
+  margin-left: 0px;
 }
 .categories-section p {
   font-size: 14px;
@@ -612,7 +612,7 @@ html{
     justify-content: space-between;
     align-items: center;
     gap: 2px;
-    margin-left: 50px;
+    margin-left: 0px;
   }
   .post-content-input::placeholder {
     font-size: 28px; /* Adjust placeholder font size */
