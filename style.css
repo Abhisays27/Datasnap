@@ -80,7 +80,7 @@ html{
     border: 1px solid rgb(200, 192, 192);
     background-color: white !important;
     border-radius: 12px;
-  margin-left: 15%;
+  margin-left: 2%;
   width: 115vh;
     height: 80vh;
    
@@ -298,6 +298,7 @@ html{
  
   .categories-section {
     width: 80%;
+    max-width: 320px;
    background-color: white;
    padding: 15px;
    border: 1px solid rgb(227, 222, 222);
@@ -386,6 +387,7 @@ html{
 
 .publishing-tips, .title-tips, .Tags-tips{
     margin-top: 10%;
+    max-width: 450px;
    
 }
 .publishing-tips h1, .title-tips h1,.Tags-tips h1{
@@ -458,13 +460,23 @@ html{
   position: absolute;
   top: 0;
   right: -9px;
-  width: 22px;
-  height: 22px;
+  max-width: 65px;
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+  height: auto;
+  font-size: 10px;
   line-height: 20px;
   text-align: center;
+  border: 2px solid rgb(236, 232, 232);
   cursor: pointer;
-  background-color: #f0f0f0;
-  border-radius: 50%;
+  background-color: #363434; /* dark blackish color */
+  color: #ffffff;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.question-mark:hover {
+  background-color: #555; /* dark grayish color on hover */
 }
 .mobile-buttons,.mob-banner{
   display: none;
@@ -476,7 +488,7 @@ html{
    
    
  
-    margin-left: 5%;
+    margin-left: 2%;
     width: 147vh;
    
 }

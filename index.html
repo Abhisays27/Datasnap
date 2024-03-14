@@ -309,21 +309,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-//popu-up q mark
-function showPopup() {
-    var popup = document.getElementById("popup");
-    popup.style.display = "block";
-}
-document.addEventListener("click", function(event) {
-    var popup = document.getElementById("popup");
-    var questionMark = document.querySelector(".question-mark");
-    
-    // Close popup if clicked outside
-    if (!popup.contains(event.target) && event.target !== questionMark) {
-        popup.style.display = "none";
-    }
-    
-});
+
 
 
     </script>
@@ -382,15 +368,10 @@ document.addEventListener("click", function(event) {
           <div class="search-container">
             <div class="input-container">
               <input type="text" id="searchInput" class="search-input" placeholder="Add up to 4 tags...">
-              <div class="question-mark" onclick="showPopup()">?</div>
+              <div class="question-mark" onclick="showPopup()">Req Tag</div>
           </div>
           
-          <div class="popup" id="popup">
-              <div class="popup-content">
-                  <p>Hashtag Not there?</p>
-                  <button onclick="addNewTag()">Request tag</button>
-              </div>
-          </div>
+         
           
             <div class="tag-list" id="tagList"></div>
             <div class="dropdown" id="dropdown">
