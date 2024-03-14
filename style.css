@@ -24,9 +24,13 @@ html{
     
     background-color: #fff; 
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
-    padding: 10px 20px;
-    margin-bottom: 5%;
+    padding: 0px 20px;
+    margin-bottom: 2%;
    
+}
+
+img{
+height: 60px;
 }
 
 .banner a,.mob-banner a {
